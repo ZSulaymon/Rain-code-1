@@ -12,7 +12,7 @@ namespace MatrixHomeWork
     {
         public const int Width = 120; // ширина
         public const int Height = 40; // высота
-        public const int Lines = 100; // линии
+        public const int Lines = 10; // линии
         public const int StartDelay = 10; // остановка 
 
         public static async Task LoopLine() // петля линии
@@ -71,7 +71,7 @@ namespace MatrixHomeWork
             for (var i = 0; i < Matrix.Height + Length; i++)
             {
                 Step();
-                await Task.Delay(UpdateTime);
+                await Task.Delay(100);
             }
         }
 
