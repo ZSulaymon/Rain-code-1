@@ -12,7 +12,7 @@ namespace MatrixHomeWork
     {
         public const int Width = 120; // ширина
         public const int Height = 40; // высота
-        public const int Lines = 10; // линии
+        public const int Lines = 100; // линии
         public const int StartDelay = 10; // остановка 
 
         public static async Task LoopLine() // петля линии
@@ -36,10 +36,10 @@ namespace MatrixHomeWork
     }
     internal class MatrixLine
     {
-        private const int MinLength = 13;
-        private const int MaxLength = 15;
-        private const int MinUpdateTime = 80;
-        private const int MaxUpdateTime = 80;
+        private const int MinLength = 5;
+        private const int MaxLength = 10;
+        private const int MinUpdateTime = 10;
+        private const int MaxUpdateTime = 100;
 
         private const string Symbols = "*/+-=?~0123456789ABCDEFGHIJKLMNOPQRSTUVWXUZ";
         private readonly int Column;
@@ -71,7 +71,7 @@ namespace MatrixHomeWork
             for (var i = 0; i < Matrix.Height + Length; i++)
             {
                 Step();
-                await Task.Delay(300);
+                await Task.Delay(UpdateTime);
             }
         }
 
